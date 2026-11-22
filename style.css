@@ -1,0 +1,243 @@
+
+:root {
+    --primary: #7851A9;
+    --accent: #A78BFA;
+    --background: #100D18;
+    --surface: #1B1625;
+    --border: #332943;
+    --text: #F5F0FF;
+    --muted: #A69BB5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 255px;
+    min-height: 100vh;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.brand img, .logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.brand h2 {
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.brand small, .nav-label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.nav-label {
+    margin: 24px 0 12px;
+}
+
+nav button {
+    width: 100%;
+    padding: 13px;
+    margin: 3px 0;
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    border-radius: 9px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+nav button:hover,
+nav button:focus {
+    background: #302341;
+    color: white;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 35px;
+    min-width: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+header small {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+header h1 {
+    margin-top: 10px;
+    font-size: 27px;
+}
+
+button {
+    font-family: inherit;
+}
+
+.lock-button {
+    background: #302341;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 11px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.welcome-card {
+    background: linear-gradient(120deg, #49316B, #21172F);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 22px;
+}
+
+.welcome-card h2 {
+    margin-bottom: 10px;
+}
+
+.welcome-card p, .widget p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 12px;
+    min-height: 130px;
+}
+
+.widget h3 {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+#lock-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #302044, #100D18 70%);
+    padding: 20px;
+}
+
+.lock-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.lock-card h1 {
+    letter-spacing: 3px;
+    margin: 15px 0;
+}
+
+.lock-card p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.lock-card input {
+    width: 100%;
+    padding: 14px;
+    background: var(--background);
+    color: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.lock-card button {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    #app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .sidebar-footer {
+        margin-top: 20px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
