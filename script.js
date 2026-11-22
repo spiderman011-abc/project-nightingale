@@ -23,7 +23,7 @@ async function initializeApp() {
     if (!savedPIN) {
         const newPIN = prompt("Create your NIGHTINGALE access PIN:");
 
-        if (!newPIN || !/^\d{4,12}$/.test(newPIN)) {
+        if (!newPIN || !/^.{4,64}$/.test(newPIN)) {
             alert("A PIN must contain 4–12 digits.");
             return;
         }
